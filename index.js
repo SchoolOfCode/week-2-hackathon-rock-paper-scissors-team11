@@ -1,5 +1,5 @@
 let score= 0;
-let playAgain = true;
+let playAgain = false;
 
 // Build array of "Rock", "Paper" and "Scissors" ✅
 const game = [
@@ -7,26 +7,41 @@ const game = [
     "paper",
     "scissors"
 ]
-console.log (game)
-// Build a loop to randomly select between three options
-while (playAgain == true); {
-    const generatedChoice = Math.floor(Math.random() * game.length);
-    let usersGuess = prompt ("Guess between Rock, Paper and Scissors").toLowerCase();
-    
-    //if (usersGuess == generatedChoice); {
-      //  alert("Draw, Try again");
-    //} else {}
+//console.log (game)
+//Ask user if they want to play game.
+playAgain = confirm("Do you want to play rock, paper, scissors?");
 
+// Randomly select choice for computer ✅
+while (playAgain) {
+    const generatedChoice = game [Math.floor(Math.random() * game.length)];
+    //Prompt user for their choice ✅
+    const usersGuess = prompt ("Guess between Rock, Paper and Scissors:").toLowerCase();
+    
+  
+// Determine the outcome
     switch (true) {
-        case userGuess == generatedChoice:
-            alert ("It's a Tie!");
+        case usersGuess === generatedChoice:
+            alert (`It's a Tie! You both chose ${usersGuess}`);
             break;
-            case
+            case usersGuess === "rock" && generatedChoice === "scissors":
+            case usersGuess === "paper" && generatedChoice === "rock":
+            case usersGuess === "scissors" && generatedChoice === "paper":
+                alert (`You Win! You chose ${usersGuess}, and the computer chose ${generatedChoice}`);
+                score++;
+            break;
+            default:
+                alert (`You Lose! You chose ${usersGuess}, and the computer chose ${generatedChoice}`);
+                break;
     }
+    playAgain = confirm("Do you want to play again?");
+
+    alert(`Thanks for playing! Your final score is ${score}.`)
 }
 
 
-console.log (generatedChoice)
+
+
+//console.log (generatedChoice)
 // Build prompt to user to select between three options
 // Build if else statements to compare three options chosen by computer and user
 // Build alerts for winning and losing
