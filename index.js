@@ -8,7 +8,7 @@ const game = [
     "scissors"
 ]
 //console.log (game)
-//Ask user if they want to play game.
+//Ask user if they want to play game. ✅
 playAgain = confirm("Do you want to play rock, paper, scissors?");
 
 // Randomly select choice for computer ✅
@@ -18,7 +18,7 @@ while (playAgain) {
     const usersGuess = prompt ("Guess between Rock, Paper and Scissors:").toLowerCase();
     
   
-// Determine the outcome
+// Determine the outcome ✅
     switch (true) {
         case usersGuess === generatedChoice:
             alert (`It's a Tie! You both chose ${usersGuess}`);
@@ -35,7 +35,7 @@ while (playAgain) {
     }
     playAgain = confirm("Do you want to play again?");
 
-    alert(`Thanks for playing! Your final score is ${score}.`)
+    alert(`Thanks for playing! Your score is ${score}.`)
 }
 
 
