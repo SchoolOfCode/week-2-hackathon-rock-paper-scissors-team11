@@ -9,6 +9,9 @@ const game = [
     "spock",
     "lizard"
 ]
+
+//Get user to select a user name.
+const userName = prompt ("Whats your name?").toLocaleUpperCase();
 //console.log (game)
 //Ask user if they want to play game.
 playAgain = confirm("Do you want to play rock, paper, scissors, spock and lizard?");
@@ -16,8 +19,7 @@ playAgain = confirm("Do you want to play rock, paper, scissors, spock and lizard
 // Randomly select choice for computer ✅
 while (playAgain) {
     const generatedChoice = game [Math.floor(Math.random() * game.length)];
-    //Get user to select a user name.
-    const userName = prompt ("Whats your name?").toLocaleUpperCase();
+    
     //Prompt user for their choice ✅
     const usersGuess = prompt ("Guess between Rock, Paper, Scissors, Spock and Lizard:").toLowerCase();
     
@@ -47,6 +49,7 @@ while (playAgain) {
     }
     // Add way to restart loop ✅
     playAgain = confirm("Do you want to play again?");
-
-    alert(`Thanks for playing! Your score is ${score}.`)
+    if (!playAgain) {
+            alert(`Thanks for playing! Your final score is ${score}.`)
+    }
 }
