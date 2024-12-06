@@ -37,7 +37,7 @@ while (playAgain) {
             case usersGuess === "spock" && generatedChoice === "rock":
             case usersGuess === "lizard" && generatedChoice === "paper":
            
-                alert (`You Win! You chose ${usersGuess}, and the computer chose ${generatedChoice}`);
+                //alert (`You Win! You chose ${usersGuess}, and the computer chose ${generatedChoice}`);
                 alert (`You Win! ${userName} chose ${usersGuess}, and the computer chose ${generatedChoice}`);
                 score++;
             break;
