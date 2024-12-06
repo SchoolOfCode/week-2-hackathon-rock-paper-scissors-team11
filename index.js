@@ -5,17 +5,19 @@ let playAgain = false;
 const game = [
     "rock",
     "paper",
-    "scissors"
+    "scissors",
+    "spock",
+    "lizard"
 ]
 //console.log (game)
 //Ask user if they want to play game.
-playAgain = confirm("Do you want to play rock, paper, scissors?");
+playAgain = confirm("Do you want to play rock, paper, scissors, spock and lizard?");
 
 // Randomly select choice for computer ✅
 while (playAgain) {
     const generatedChoice = game [Math.floor(Math.random() * game.length)];
     //Prompt user for their choice ✅
-    const usersGuess = prompt ("Guess between Rock, Paper and Scissors:").toLowerCase();
+    const usersGuess = prompt ("Guess between Rock, Paper, Scissors, Spock and Lizard:").toLowerCase();
     
   
 // Determine the outcome
@@ -26,6 +28,13 @@ while (playAgain) {
             case usersGuess === "rock" && generatedChoice === "scissors":
             case usersGuess === "paper" && generatedChoice === "rock":
             case usersGuess === "scissors" && generatedChoice === "paper":
+            case usersGuess === "spock" && generatedChoice === "scissors":
+            case usersGuess === "lizard" && generatedChoice === "spock":
+            case usersGuess === "scissors" && generatedChoice === "lizard":
+            case usersGuess === "paper" && generatedChoice === "spock":
+            case usersGuess === "spock" && generatedChoice === "rock":
+            case usersGuess === "lizard" && generatedChoice === "paper":
+           
                 alert (`You Win! You chose ${usersGuess}, and the computer chose ${generatedChoice}`);
                 score++;
             break;
