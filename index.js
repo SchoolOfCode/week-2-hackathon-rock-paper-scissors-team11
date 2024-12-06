@@ -11,7 +11,7 @@ const game = [
 ]
 
 //Get user to select a user name.
-const userName = prompt ("Whats your name?").charAt(0).toUpperCase();//toLocaleUpperCase();
+const userName = prompt ("Whats your name?").toUpperCase();
 //console.log (game)
 //Ask user if they want to play game.
 playAgain = confirm("Do you want to play rock, paper, scissors, spock and lizard?");
@@ -27,7 +27,7 @@ while (playAgain) {
         continue
     }
     
-  
+  console.log(playAgain)
 // Determine the outcome ✅
     switch (true) {
         case usersGuess === generatedChoice:
